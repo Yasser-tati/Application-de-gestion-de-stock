@@ -1,0 +1,268 @@
+/* Main Dashboard layout */
+.dashboard {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(to right, black 30%, #FFD979 100%);
+  flex-direction: row;
+  position: relative;
+}
+
+.dashboard-content {
+  margin-left: 250px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-between;
+  background-color: transparent;
+  overflow-y: auto;
+}
+
+/* Admin Section */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-section h2 {
+  font-size: 22px;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  color: white;
+}
+
+.admin-info {
+  background-color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  color: #333;
+}
+
+/* Middle Section (Sales Chart and Notes) */
+.middle-section {
+  display: flex;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  gap: 20px;
+}
+
+.sales-section {
+  flex: 2;
+}
+
+.sales-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.notes-section {
+  flex: 1;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.notes-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: -3%;
+}
+
+.notes-textarea {
+  width: 100%;
+  height: calc(105% - 40px);
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+/* Table Section */
+.table-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  background-color: black;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.add-btn:hover {
+  background-color: grey;
+}
+
+.add-btn svg {
+  margin-right: 8px;
+}
+
+/* User Table */
+.table-container {
+  border: 1px solid #ddd;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th, .users-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.users-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.users-table td {
+  font-weight: normal;
+  color: #333;
+}
+
+/* Delete Button Styling */
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: red;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.delete-btn:hover {
+  color: darkred;
+}
+
+/* Popup Styles (for Adding/Deleting Users) */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 30px;
+  width: 350px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.popup-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.popup-buttons button {
+  background-color: #308efe;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.popup-buttons .cancel {
+  background-color: #e74c3c; /* Red for 'Annuler' */
+}
+
+.popup-buttons .cancel:hover {
+  background-color: darkred;
+}
+.save-btn{
+  background-color: black;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 68%;
+  width: 32%;
+}
+
+.save-btn:hover {
+  background-color: grey;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .dashboard-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .middle-section {
+    flex-direction: column;
+  }
+
+  .table-container {
+    max-height: 200px; /* Allow for larger table on smaller screens */
+  }
+
+  .popup-content {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+

@@ -1,0 +1,193 @@
+/* Ensure the body and html are scrollable */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-y: auto; /* Enable scrolling when content overflows */
+}
+
+.sales-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to right, black 30%, #FFD979 100%);
+  /* Remove inner scrolling */
+}
+
+.sales-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 20px;
+  background: linear-gradient(to right, black 30%, #FFD979 100%);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Remove inner scrolling */
+}
+
+/* Header Section */
+.sales-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sales-title {
+  font-size: 24px;
+  color: white;
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.sales-admin-info {
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sales Form */
+.sales-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sales-form-group {
+  margin-bottom: 15px;
+}
+
+.sales-form-group label {
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.sales-icon {
+  margin-right: 8px;
+}
+
+.sales-form-group input,
+.sales-form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.sales-form-group textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Dropdown Container */
+.sales-dropdown-container {
+  position: relative;
+}
+
+#productSearch {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.sales-dropdown-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.sales-dropdown {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sales-dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Submit Button */
+.sales-submit-btn {
+  background-color: black;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sales-submit-btn:hover {
+  background-color: grey;
+}
+
+
+/* Success Popup */
+.success-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.success-popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+.close-popup-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.close-popup-btn:hover {
+  background-color: #c0392b;
+}
+
+
+.success-icon {
+  font-size: 40px;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.success-popup-content p {
+  font-size: 16px;
+  color: #333;
+}

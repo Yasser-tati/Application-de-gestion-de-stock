@@ -1,0 +1,186 @@
+/* Main Page Layout */
+.tableofsales-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(to right, black 30%, #FFD979 100%);
+  overflow: hidden; /* Prevent page-level scrolling */
+}
+
+.tableofsales-content {
+  margin-left: 250px; /* Space for the menu */
+  flex: 1;
+  padding: 20px;
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px); /* Adjusted height to fit viewport */
+}
+
+/* Header Section */
+.tableofsales-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tableofsales-title {
+  font-size: 22px;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  color: white;
+}
+
+.tableofsales-admin-info {
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Container */
+.tableofsales-table-container {
+  flex: 1;
+  max-height: calc(100vh - 180px); /* Adjusted to fit within viewport minus header/footer */
+  overflow-y: auto; /* Scroll only within the table container */
+  border-radius: 8px;
+  background-color: transparent; /* Transparent when empty */
+  border: 0px solid #ddd;
+}
+
+/* Table Styling */
+.tableofsales-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff; /* White background for table content */
+}
+
+.tableofsales-table th,
+.tableofsales-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Search Bar Styling */
+.tableofsales-search-bar {
+  margin-bottom: 20px;
+}
+
+.tableofsales-search-bar input {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.tableofsales-table th {
+  background-color: #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Footer Section */
+.tableofsales-footer-section {
+  text-align: right;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: linear-gradient(to right, black 30%, #FFD979 100%);
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+}
+
+.tableofsales-footer-section h3 {
+  display: inline-block;
+  font-size: 18px;
+  color: #333;
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+.tableofsales-reset-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tableofsales-reset-btn:hover {
+  background-color: darkred;
+}
+
+/* Popup Styling */
+.tableofsales-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.tableofsales-popup-content {
+  background-color: #fff;
+  padding: 30px;
+  width: 350px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tableofsales-popup-content h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.tableofsales-popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.tableofsales-popup-buttons button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tableofsales-popup-buttons .confirm {
+  background-color: #308efe;
+  color: #fff;
+  border: none;
+}
+
+.tableofsales-popup-buttons .cancel {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+}
+
+.tableofsales-popup-buttons .cancel:hover {
+  background-color: darkred;
+}
+
+.tableofsales-popup-buttons .confirm:hover {
+  background-color: #1d6cd5;
+}

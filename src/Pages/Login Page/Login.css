@@ -1,0 +1,155 @@
+/* Styling scoped to the login page */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height for the page */
+  background-color: #000; /* Black background for the login page */
+  padding: 20px; /* Padding for smaller screens */
+  overflow-y: auto; /* Allows scrolling on smaller screens */
+}
+
+.login-card {
+  background-color: #000; /* Dark grey card */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 350px;
+  border: 2px solid #d4af37; /* Gold border */
+  max-height: 90vh; /* Limit height on smaller screens */
+  overflow-y: auto; /* Enable scrolling inside the card */
+}
+
+.logo img {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 25px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #d4af37; /* Gold label text */
+  text-align: left;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon i {
+  position: absolute;
+  left: 10px;
+  color: #d4af37; /* Gold icon color */
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 12px 12px 12px 35px; /* Padding adjusted for icon */
+  border: 1px solid #d4af37; /* Gold border */
+  border-radius: 5px;
+  background-color: #333; /* Dark input background */
+  color: #fff; /* White text */
+}
+
+.input-with-icon input:focus {
+  outline: none;
+  border-color: #f0c674; /* Lighter gold on focus */
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #d4af37; /* Gold button */
+  color: #000; /* Black text */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #f0c674; /* Lighter gold on hover */
+}
+
+/* Scoped Popup Styling - Only for login page */
+.login-page .popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.login-page .popup-content {
+  background-color: #1f1f1f; /* Match the card's dark grey background */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #fff; /* White text for contrast */
+  border: 2px solid #d4af37; /* Gold border to match theme */
+  max-width: 300px;
+  position: relative; /* For close icon positioning */
+}
+
+.login-page .popup-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.login-page .popup-icon {
+  color: #e74c3c; /* Red X icon */
+  font-size: 40px; /* Larger size for visibility */
+  margin-bottom: 10px;
+}
+
+.login-page .popup-close-button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #e74c3c; /* Red X icon for closing */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.login-page .popup-close-button:hover {
+  color: #c0392b; /* Darker red on hover */
+}
+
+/* Styling for the toggle password icon */
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #d4af37; /* Gold color for the icon */
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .login-card {
+    width: 100%;
+    padding: 20px;
+    max-height: 80vh;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+}

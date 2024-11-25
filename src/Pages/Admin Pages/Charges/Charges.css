@@ -1,0 +1,154 @@
+/* Main Page Layout */
+.charges-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to right, black 30%, #FFD979 100%);
+  overflow-y: auto; /* Enables page scrolling */
+}
+
+.charges-content {
+  margin-left: 250px; /* Space for the menu */
+  flex: 1;
+  padding: 20px;
+  background: transparent; /* Remove background here to keep the page gradient */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section: Charge Title on the Left, Admin Info on the Right */
+.charges-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.charges-title {
+  font-size: 24px;
+  color: white;
+}
+
+.charges-admin-info {
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Charges Form */
+.charges-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.charges-form h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Group */
+.charges-form-group {
+  margin-bottom: 15px;
+}
+
+.charges-form-group label {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.charges-form-group label svg {
+  margin-right: 8px;
+}
+
+.charges-form-group input,
+.charges-form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.charges-form-group input[type="date"] {
+  padding: 5px;
+}
+
+.charges-form-group textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Submit Button */
+.charges-submit-btn {
+  background-color: black;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.charges-submit-btn:hover {
+  background-color: grey;
+  color: white;
+}
+
+/* Success Popup */
+.success-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.success-popup-content {
+  background-color: #fff;
+  padding: 30px;
+  width: 350px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.success-popup-content p {
+  font-size: 16px;
+  color: #333;
+  margin: 15px 0;
+}
+
+.success-icon {
+  font-size: 40px;
+  color: #28a745;
+}
+
+.success-close-btn {
+  background-color: #308efe;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.success-close-btn:hover {
+  background-color: #1a6fb3;
+}

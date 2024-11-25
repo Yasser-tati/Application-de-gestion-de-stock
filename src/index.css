@@ -1,0 +1,13 @@
+/* Global styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #000; /* Default background */
+
+}
+
+.table-container{
+  height: max-content;
+  flex: 1; /* Allow the table to fill remaining space */
+}

@@ -1,0 +1,269 @@
+/* Global CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Ensure the body and html take full height */
+  overflow: hidden; /* Prevent unnecessary scrolling */
+}
+
+/* Sidebar container */
+.menu {
+  width: 250px;
+  height: 100vh; /* Full height for the window */
+  background-color: #000;
+  color: #d4af37;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Space between menu items and logout button */
+  padding: 10px 0;
+  position: fixed; /* Fix the menu to the left side of the screen */
+  top: 0;
+  left: 0;
+  font-family: 'Arial', sans-serif; /* Use a clean, professional font */
+  z-index: 1000; /* Ensure the menu is always above the content */
+}
+
+/* Logo styling */
+.menu-logo {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.menu-logo-img {
+  width: 150px; /* Adjusted smaller logo size */
+  height: auto; /* Automatically adjust height */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Navigation menu */
+.menu-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.menu-item {
+  width: 100%;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: lightgrey; /* Gold text color */
+  font-size: 16px; /* Slightly larger font for readability */
+  font-weight: 400; /* Bolden the font to make it more professional */
+  letter-spacing: 0.5px; /* Add slight spacing between letters */
+  cursor: pointer;
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px; /* Soften the rectangle corners */
+}
+
+.menu-item a {
+  color: inherit; /* Ensure the link inherits the menu item color */
+  text-decoration: none; /* Remove underline from the link */
+  width: 100%; /* Take full width */
+  display: flex;
+  align-items: center;
+}
+
+/* Icon styling for the menu items */
+.menu-item-icon {
+  margin-right: 10px;
+  font-size: 16px; /* Icon size */
+}
+
+/* Text styling for the menu items */
+.menu-item-text {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Hover effect for menu items */
+.menu-item:hover {
+  background-color: #333; /* Dark grey on hover */
+  color: grey; /* Lighter gold */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow to give depth */
+}
+
+/* Active menu item - invert the background and text color */
+.menu-item.active {
+  background-color: grey; /* Gold background for active item */
+  color: #000; /* Invert text color to black for active item */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to active item */
+}
+
+/* Active item icon color */
+.menu-item.active .menu-item-icon {
+  color: #000; /* Invert icon color for the active item */
+}
+
+/* Active item text color */
+.menu-item.active .menu-item-text {
+  color: #000; /* Invert text color for the active item */
+}
+
+/* Logout button styling */
+.logout {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1001; /* Keep logout above other elements */
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px; /* Make the button smaller */
+  background-color: #e74c3c; /* Red background */
+  color: #fff;
+  font-size: 14px; /* Smaller font size for a compact look */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* No underline for logout */
+  border-radius: 6px; /* Slightly smaller border-radius for the button */
+  width: 180px; /* Reduce the width to make it smaller */
+}
+
+.logout-button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+.logout-icon {
+  margin-right: 8px; /* Adjust margin slightly smaller */
+  font-size: 14px; /* Smaller icon size */
+}
+
+/* Table of Sales Page Styling */
+.tableofsales-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(to right, black 30%, #FFD979 100%);
+  overflow: hidden; /* Prevent page-level scrolling */
+}
+
+.tableofsales-content {
+  margin-left: 250px; /* Space for the menu */
+  flex: 1;
+  padding: 20px;
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px); /* Adjusted height to fit viewport */
+  z-index: 1; /* Keep below menu */
+}
+
+/* Header Section */
+.tableofsales-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tableofsales-title {
+  font-size: 22px;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  color: white;
+}
+
+.tableofsales-admin-info {
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Bar Styling */
+.tableofsales-search-bar {
+  margin-bottom: 20px;
+}
+
+.tableofsales-search-bar input {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Table Container */
+.tableofsales-table-container {
+  flex: 1;
+  max-height: calc(100vh - 180px); /* Adjusted to fit within viewport minus header/footer */
+  overflow-y: auto; /* Scroll only within the table container */
+  border-radius: 8px;
+  background-color: transparent; /* Transparent when empty */
+  border: 0px solid #ddd;
+}
+
+/* Table Styling */
+.tableofsales-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff; /* White background for table content */
+}
+
+.tableofsales-table th,
+.tableofsales-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.tableofsales-table th {
+  background-color: #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Footer Section */
+.tableofsales-footer-section {
+  text-align: right;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: linear-gradient(to right, black 30%, #FFD979 100%);
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+}
+
+.tableofsales-footer-section h3 {
+  display: inline-block;
+  font-size: 18px;
+  color: #333;
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+.tableofsales-reset-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tableofsales-reset-btn:hover {
+  background-color: darkred;
+}
