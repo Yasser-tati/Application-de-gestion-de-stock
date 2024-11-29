@@ -18,9 +18,10 @@ const Dashboard = () => {
   const [deletePopupVisible, setDeletePopupVisible] = useState(false); // For delete confirmation
   const [selectedDeleteIndex, setSelectedDeleteIndex] = useState(null); // Track the index to delete
   const [showFieldMessage, setShowFieldMessage] = useState(false); // Track for empty fields message
-
+  const adminName = localStorage.getItem('username');
   useEffect(() => {
     // Fetch users from the server
+    // get access token
     let token = GetToken();
     if (!token) navigate('/login');
 
@@ -35,6 +36,7 @@ const Dashboard = () => {
       .then((data) => {
         setUsers(data.data);
       });
+
 
     fetch('http://164.92.219.176:8001/api/note', {
       method: 'GET',
@@ -57,14 +59,15 @@ const Dashboard = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setSaleInsights(data.data);
       });
   }, []);
 
+
+  // Add new user validation
   const handleAddUser = () => {
-    // Validation for absolute positive price
-    const amount = Math.abs(parseFloat(newUser.amount));
-    if (!newUser.client_name || !amount || !newUser.credit_date) {
+    if (!newUser.client_name || !newUser.amount || !newUser.credit_date) {
       setShowFieldMessage(true);
       return;
     }
@@ -72,36 +75,64 @@ const Dashboard = () => {
     let token = GetToken();
     if (!token) navigate('/login');
 
-    const sanitizedUser = { ...newUser, amount }; // Ensure positive amount
-
     fetch('http://164.92.219.176:8001/api/credits', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       },
-      body: JSON.stringify(sanitizedUser)
+      body: JSON.stringify(newUser)
     })
       .then((res) => res.json())
       .then((data) => {
-        setUsers([...users, sanitizedUser]);
+        setUsers([...users, { ...newUser }]);
+        setIsPopupVisible(false);
+        setNewUser({ client_name: '', amount: '', creadit_date: '' });
+        setShowFieldMessage(false);
       });
 
-    setIsPopupVisible(false);
-    setNewUser({ client_name: '', amount: '', credit_date: '' });
-    setShowFieldMessage(false);
+
   };
 
+  // Handle delete confirmation popup
   const handleDeleteUser = (index) => {
     setSelectedDeleteIndex(index);
     setDeletePopupVisible(true); // Show confirmation popup
   };
 
+  // Confirm delete user
   const confirmDeleteUser = () => {
-    const updatedUsers = users.filter((_, i) => i !== selectedDeleteIndex);
-    setUsers(updatedUsers);
+
+    let token = GetToken();
+    if (!token) navigate('/login');
+
+    fetch(`http://164.92.219.176:8001/api/credits/${selectedDeleteIndex}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        fetch('http://164.92.219.176:8001/api/credits', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          }
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            setUsers(data.data);
+          });
+      });
+
+
+
     setDeletePopupVisible(false);
   };
+
 
   const saveNote = () => {
     let token = GetToken();
@@ -113,14 +144,13 @@ const Dashboard = () => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       },
-      body: JSON.stringify({ note })
+      body: JSON.stringify({ note: note })
     })
       .then((res) => res.json())
-      .then(() => {
-        console.log('Note saved successfully');
+      .then((data) => {
+        console.log(data);
       });
-  };
-
+  }
   return (
     <div className="dashboard">
       <Menu />
@@ -129,7 +159,7 @@ const Dashboard = () => {
         {/* Admin Section */}
         <div className="header-section">
           <h2>Accueil</h2>
-          <div className="admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: Monalisa</div>
+          <div className="admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: {adminName}</div>
         </div>
 
         {/* Middle Section: Diagram and Notes */}
@@ -180,13 +210,13 @@ const Dashboard = () => {
                 </tr>
               </thead>
               <tbody>
-                {users.map((user, index) => (
-                  <tr key={index}>
+                {users.map((user) => (
+                  <tr key={user.id}>
                     <td>{user.client_name}</td>
                     <td>{user.amount}</td>
                     <td>{user.credit_date}</td>
                     <td>
-                      <button className="delete-btn" onClick={() => handleDeleteUser(index)}>
+                      <button className="delete-btn" onClick={() => handleDeleteUser(user.id)}>
                         <FaTrash />
                       </button>
                     </td>

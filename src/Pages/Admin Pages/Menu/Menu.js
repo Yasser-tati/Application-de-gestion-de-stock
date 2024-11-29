@@ -43,6 +43,8 @@ const Menu = () => {
       if (data.error === false) {
         localStorage.removeItem('token');
         localStorage.removeItem('role');
+        localStorage.removeItem('username');
+        localStorage.removeItem('email');
         navigate('/login', { replace: true });
       }
     });

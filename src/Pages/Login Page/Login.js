@@ -29,6 +29,8 @@ const Login = () => {
        if (data.token) {
          localStorage.setItem('token', data.token);
          localStorage.setItem('role', data.role ? data.role : 'admin');
+         localStorage.setItem('username', data.username);
+         localStorage.setItem('email', data.email);
          navigate('/dashboard', { replace: true });
        } else {
           setUsername('');

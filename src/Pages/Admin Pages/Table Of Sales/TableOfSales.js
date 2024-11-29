@@ -115,8 +115,8 @@ const TableOfSales = () => {
             <tbody>
               {filteredSales.map((sale) => {
                 const prixTotal = sale.count * sale.unit_price; // Quantité x Prix Unitaire
-                const profitPerItem = sale.product.stock_price - sale.unit_price; // Profit per item sold
-                const totalProfit = profitPerItem * sale.count; // Total Profit for this sale
+                const totalProfit = ( sale.unit_price - sale.product.price ) * sale.count; // Profit per item sold
+                // const totalProfit = profitPerItem * sale.count; // Total Profit for this sale
 
                 return (
                   <tr key={sale.id}>
