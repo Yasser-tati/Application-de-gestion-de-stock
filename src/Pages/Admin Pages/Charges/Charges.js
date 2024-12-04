@@ -14,7 +14,7 @@ const Charges = () => {
   const [date, setDate] = useState('');
   const [description, setDescription] = useState('');
   const [successPopupVisible, setSuccessPopupVisible] = useState(false);
-
+  const adminName = localStorage.getItem('username');
   const handleSubmit = (e) => {
     e.preventDefault();
     let token = GetToken();
@@ -60,7 +60,7 @@ const Charges = () => {
         {/* Admin Section and Charges Title */}
         <div className="charges-header">
           <h2 className="charges-title">Ajouter une charge</h2>
-          <div className="charges-admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: Monalisa</div>
+          <div className="admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: {adminName}</div>
         </div>
 
         {/* Charges Form */}

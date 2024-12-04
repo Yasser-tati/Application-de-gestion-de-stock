@@ -13,7 +13,7 @@ const Cash = () => {
   const [newAmount, setNewAmount] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [amountAfterMotifs, setAmountAfterMotifs] = useState(0);
-
+  const adminName = localStorage.getItem('username');
   useEffect(() => {
 
     let token = GetToken();
@@ -105,7 +105,7 @@ const Cash = () => {
       <div className="cash-content">
         <div className="cash-header">
           <h2 className="cash-title">Caisse Totale</h2>
-          <div className="cash-admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: Monalisa</div>
+          <div className="admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: {adminName}</div>
         </div>
 
         <div className="cash-nav">

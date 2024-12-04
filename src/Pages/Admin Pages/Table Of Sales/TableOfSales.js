@@ -12,7 +12,7 @@ const TableOfSales = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState(''); // State for search input
-
+  const adminName = localStorage.getItem('username');
   useEffect(() => {
     let token = GetToken();
     if (!token) navigate('/login');
@@ -83,7 +83,7 @@ const TableOfSales = () => {
         <div className="tableofsales-header-section">
           <h2 className="tableofsales-title">Tableau des ventes</h2>
 
-          <div className="tableofsales-admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: Monalisa</div>
+          <div className="admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: {adminName}</div>
           
         </div>
 

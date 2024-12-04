@@ -19,7 +19,7 @@ const Products = () => {
     image: null,
   });
   const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState(false);
-
+  const adminName = localStorage.getItem('username');
   // Calculate total price automatically when quantity or price per unit changes
   useEffect(() => {
     setTotalPrix(Math.abs(quantite) * Math.abs(prixUnitaire));
@@ -96,7 +96,7 @@ const Products = () => {
         {/* Admin Section and Product Title */}
         <div className="products-header-section">
           <h2 className="products-title">Ajouter un produit</h2>
-          <div className="products-admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: Monalisa</div>
+          <div className="admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: {adminName}</div>
         </div>
 
         {/* Product Form */}

@@ -20,6 +20,7 @@ const Sales = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [successPopupVisible, setSuccessPopupVisible] = useState(false);
+  const adminName = localStorage.getItem('username');
 
   // Fetch products from API
   useEffect(() => {
@@ -110,7 +111,7 @@ const Sales = () => {
       <div className="sales-content">
         <div className="sales-header-section">
           <h2 className="sales-title">Ajouter une vente</h2>
-          <div className="sales-admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: Monalisa</div>
+          <div className="admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: {adminName}</div>
         </div>
 
         <div className="sales-form">

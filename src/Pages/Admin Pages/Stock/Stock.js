@@ -15,7 +15,7 @@ const Stock = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
-
+  const adminName = localStorage.getItem('username');
   useEffect(() => {
     let token = GetToken();
     if (!token) navigate('/login');
@@ -104,7 +104,7 @@ const Stock = () => {
       <div className="stock-content">
         <div className="stock-header-section">
           <h2 className="stock-title">Stock</h2>
-          <div className="stock-admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: Monalisa</div>
+          <div className="admin-info"><RiAdminLine />&nbsp;&nbsp;Admin: {adminName}</div>
         </div>
 
         <div className="stock-search-bar">
